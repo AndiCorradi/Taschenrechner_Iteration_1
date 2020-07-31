@@ -10,21 +10,22 @@ namespace Taschenrechner_Iteration_1
     {
         static void Main(string[] args)
         {
-            // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
+            // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen mit Kommastellen eingeben, um deren Summe berechnen zu lassen.
             Console.Write("Bitte gib den ersten Summanden ein:");
             string ersterSummand = Console.ReadLine();
             Console.Write("Bitte gib den zweiten Summanden ein:");
             String zweiterSummand = Console.ReadLine();
 
-            // Wandel Text in Ganzzahlen
-            int ersterSummandAlsZahl = Convert.ToInt32(ersterSummand);
-            int zweiterSummandAlsZahl = Convert.ToInt32(zweiterSummand);
+            // Wandel Text in Gleitkommazahlen
+            float ersterSummandAlsZahl = Convert.ToSingle(ersterSummand);
+            float zweiterSummandAlsZahl = Convert.ToSingle(zweiterSummand);
 
             // Berechnung ausführen
-            int summe = ersterSummandAlsZahl + zweiterSummandAlsZahl;
+            float summe = ersterSummandAlsZahl + zweiterSummandAlsZahl;
 
             // Ausgabe
             Console.WriteLine("Die Summe ist: {0}", summe);
+            Console.WriteLine("Press AnyKey to close...");
             Console.ReadLine();
 
         }
