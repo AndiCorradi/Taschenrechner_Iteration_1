@@ -17,18 +17,17 @@ namespace Taschenrechner
             String zweiterSummand = Console.ReadLine();
 
             // Wandel Text in Gleitkommazahlen
-            float ersterSummandAlsZahl = Convert.ToSingle(ersterSummand);
-            float zweiterSummandAlsZahl = Convert.ToSingle(zweiterSummand);
+            double ersterSummandAlsZahl = Convert.ToDouble(ersterSummand);
+            double zweiterSummandAlsZahl = Convert.ToDouble(zweiterSummand);
 
             // Berechnung ausführen
-            float summe = ersterSummandAlsZahl + zweiterSummandAlsZahl;
+            double summe = ersterSummandAlsZahl + zweiterSummandAlsZahl;
 
             // Ausgabe
             Console.WriteLine("Die Summe ist: {0}", summe);
             Console.WriteLine("Press AnyKey to close...");
             Console.ReadLine();
             // End of Programm
-            // Interation_1_Fertig gestellt
 
 
         }
