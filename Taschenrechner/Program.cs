@@ -24,35 +24,52 @@ namespace Taschenrechner
         static void Main(string[] args)
         {
             // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen mit Kommastellen eingeben, um deren Summe berechnen zu lassen.
-            // string Operation = HoleBenutzerEingabe("Bitte gib die gewünschte Operation ein: + oder -");
+            string Operation = HoleBenutzerEingabe("Bitte gib die gewünschte Operation ein (+ oder -): ");
             string erstersteZahlAlsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein:");
             string zweiteZahlAlsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein:");
             
             // Wandel Text in Gleitkommazahlen
-            // TODO: Auslagern i Methode, wenn Struktur umfangreicher geworden ist.
+            // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
             double ersteZahl = Convert.ToDouble(erstersteZahlAlsString);
             double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
+            if (Operation == "+")
+            {
+                double Resultat = Addiere(ersteZahl, zweiteZahl);
+                Console.WriteLine("Die Summe ist: {0}", Resultat);
+            }
+
+            else if (Operation == "-")
+            {
+                double Resultat = Subtrahiere(ersteZahl, zweiteZahl);
+                Console.WriteLine("Die Differenz ist {0}", Resultat);
+            }
+
+            else
+            {
+                Console.WriteLine("Du hast eine ungültige Operation eingegeben");
+            }
+
             // Berechnung ausführen
-            double summe = Addiere(ersteZahl, zweiteZahl);
+            //double summe = Addiere(ersteZahl, zweiteZahl);
 
             // Ausgabe
-            Console.WriteLine("Die Summe ist: {0}", summe);
+            //Console.WriteLine("Die Summe ist: {0}", summe);
             HoleBenutzerEingabe("Zum beenden bitte Return drücken !");
         }
 
         static double Addiere(double ersterSummand, double zweiterSummand)
         {
-            double summe = ersterSummand + zweiterSummand;
+            double Resultat = ersterSummand + zweiterSummand;
 
-            return summe;
+            return Resultat;
         }
 
         static double Subtrahiere(double Minuend, double Subtrahend)
         {
-            double Differenz = Minuend - Subtrahend;
+            double Resultat = Minuend - Subtrahend;
 
-            return Differenz;
+            return Resultat;
         }
 
         static string HoleBenutzerEingabe(string ausgabeText)

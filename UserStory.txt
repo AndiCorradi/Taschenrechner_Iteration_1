@@ -5,12 +5,11 @@ User Story Vorlage: Als <Rolle/Anwendertyp> möchte ich <Ziel/Wunsch/Funktion>, u
 Iteration #1
 
 Titel: Softwarestruktur
-Story: Als Entwickler möchte ich den Quellcode sauber strukturieren, um später einfach weitere Funktionalitäten hinzufügen zu können.
+Story: Als Entwickler möchte ich den Quellcode sauber strukturieren, um später einfach weitere Funktionalitäten hinzu fügen zu können.
 Akzeptanzkriterien:
 -	Das Single Level of Abstravtion Prinzip wird eingehalten, oder eine Abweichung ist begründet und Dokumentiert.
 Status:
--	Umgesetzt
--	Erledigt
+-	Offen
 
 Titel: Subtrahieren
 Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Differenz berechnen zu lassen.
