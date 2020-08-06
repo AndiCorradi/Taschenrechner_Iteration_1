@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,24 +9,36 @@ namespace Taschenrechner
 {
     class Program
     {
+
+        // METHODE DEFINIEREN (in 7 Schritten)
+        // Modifizierer definieren
+        // Datentyp des Rückgabewertes definieren
+        // Methodennamen definieren
+        // Rundeklammern an den Methodennamen anfügen
+        // Überlegen welche Parameter benötigt werden (optional definieren)
+        // Geschweifte Klammern einfügen
+        // Methode implementieren (Anweisungen in den Methodenrumpf schreiben)
+
+        
+
         static void Main(string[] args)
         {
             // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen mit Kommastellen eingeben, um deren Summe berechnen zu lassen.
-            Console.Write("Bitte gib den ersten Summanden ein:");
-            string ersterSummand = Console.ReadLine();
-            Console.Write("Bitte gib den zweiten Summanden ein:");
-            String zweiterSummand = Console.ReadLine();
-
+            // string Operation = HoleBenutzerEingabe("Bitte gib die gewünschte Operation ein: + oder -");
+            string erstersteZahlAlsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein:");
+            string zweiteZahlAlsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein:");
+            
             // Wandel Text in Gleitkommazahlen
-            double ersterSummandAlsZahl = Convert.ToDouble(ersterSummand);
-            double zweiterSummandAlsZahl = Convert.ToDouble(zweiterSummand);
+            // TODO: Auslagern i Methode, wenn Struktur umfangreicher geworden ist.
+            double ersteZahl = Convert.ToDouble(erstersteZahlAlsString);
+            double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
             // Berechnung ausführen
-            double summe = Addiere(ersterSummandAlsZahl, zweiterSummandAlsZahl);
+            double summe = Addiere(ersteZahl, zweiteZahl);
 
             // Ausgabe
             Console.WriteLine("Die Summe ist: {0}", summe);
-            WarteAufBenutzerEingabe();
+            HoleBenutzerEingabe("Zum beenden bitte Return drücken !");
         }
 
         static double Addiere(double ersterSummand, double zweiterSummand)
@@ -35,11 +48,19 @@ namespace Taschenrechner
             return summe;
         }
 
-
-        static void WarteAufBenutzerEingabe()
+        static double Subtrahiere(double Minuend, double Subtrahend)
         {
-            Console.WriteLine("Zum beenden bitte Return drücken !");
-            Console.ReadLine();
+            double Differenz = Minuend - Subtrahend;
+
+            return Differenz;
+        }
+
+        static string HoleBenutzerEingabe(string ausgabeText)
+        {
+            Console.Write(ausgabeText);
+            string Summand = Console.ReadLine();
+
+            return Summand;
         }
     }
 }
