@@ -33,28 +33,32 @@ namespace Taschenrechner
             double ersteZahl = Convert.ToDouble(erstersteZahlAlsString);
             double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
-            if (Operation == "+")
-            {
-                double Resultat = Addiere(ersteZahl, zweiteZahl);
-                Console.WriteLine("Die Summe ist: {0}", Resultat);
-            }
-
-            else if (Operation == "-")
-            {
-                double Resultat = Subtrahiere(ersteZahl, zweiteZahl);
-                Console.WriteLine("Die Differenz ist {0}", Resultat);
-            }
-
-            else
-            {
-                Console.WriteLine("Du hast eine ungültige Operation eingegeben");
-            }
-
             // Berechnung ausführen
-            //double summe = Addiere(ersteZahl, zweiteZahl);
+            double Resultat = 0;
+            switch (Operation)
+            {
+                case "+":
+                Resultat = Addiere(ersteZahl, zweiteZahl);
+                Console.WriteLine("Die Summe ist: {0}", Resultat);
+                   break;
+            
+                case "-":
+                Resultat = Subtrahiere(ersteZahl, zweiteZahl);
+                Console.WriteLine("Die Differenz ist {0}", Resultat);
+                break;
+
+                case "/":
+                case "*":
+                    Console.WriteLine("Diese Operation wird bald unterstützt. Versprochen ;-) !");
+                    break;
+            
+                default:
+                    Console.WriteLine("Du hast eine ungültige Operation eingegeben");
+                    break;
+            }
+            
 
             // Ausgabe
-            //Console.WriteLine("Die Summe ist: {0}", summe);
             HoleBenutzerEingabe("Zum beenden bitte Return drücken !");
         }
 
@@ -75,9 +79,9 @@ namespace Taschenrechner
         static string HoleBenutzerEingabe(string ausgabeText)
         {
             Console.Write(ausgabeText);
-            string Summand = Console.ReadLine();
+            string Zahl = Console.ReadLine();
 
-            return Summand;
+            return Zahl;
         }
     }
 }

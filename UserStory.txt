@@ -9,14 +9,17 @@ Story: Als Entwickler möchte ich den Quellcode sauber strukturieren, um später e
 Akzeptanzkriterien:
 -	Das Single Level of Abstravtion Prinzip wird eingehalten, oder eine Abweichung ist begründet und Dokumentiert.
 Status:
--	Offen
+-	Implementiert
+-	getestet
 
 Titel: Subtrahieren
 Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Differenz berechnen zu lassen.
 Akzeptanzkriterien:
 -	Gleitkommazahlen zwischen -10.0 und 100.0 könne subtrahiert werden.
 Status:
--	Offen
+-	Implementiert
+-	getestet
+-	erledigt
 
 Titel: Addieren
 Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
