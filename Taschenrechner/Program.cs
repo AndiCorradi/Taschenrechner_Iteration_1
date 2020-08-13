@@ -24,9 +24,9 @@ namespace Taschenrechner
         static void Main(string[] args)
         {
             // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen mit Kommastellen eingeben, um deren Summe berechnen zu lassen.
-            string Operation = HoleBenutzerEingabe("Bitte gib die gewünschte Operation ein (+ oder -): ");
-            string erstersteZahlAlsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein:");
-            string zweiteZahlAlsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein:");
+            string Operation = HoleBenutzerEingabe("Bitte gib die gewünschte Operation ein (+ - * /): ");
+            string erstersteZahlAlsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
+            string zweiteZahlAlsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
             
             // Wandel Text in Gleitkommazahlen
             // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
@@ -44,12 +44,17 @@ namespace Taschenrechner
             
                 case "-":
                 Resultat = Subtrahiere(ersteZahl, zweiteZahl);
-                Console.WriteLine("Die Differenz ist {0}", Resultat);
+                Console.WriteLine("Die Differenz ist: {0}", Resultat);
                 break;
 
                 case "/":
+                Resultat = Dividiere(ersteZahl, zweiteZahl);
+                    Console.WriteLine("Der Quotient ist: {0}", Resultat);
+                    break;
+
                 case "*":
-                    Console.WriteLine("Diese Operation wird bald unterstützt. Versprochen ;-) !");
+                Resultat = Multipliziere(ersteZahl, zweiteZahl);
+                    Console.WriteLine("Das Produkt ist: {0}", Resultat);
                     break;
             
                 default:
@@ -72,6 +77,20 @@ namespace Taschenrechner
         static double Subtrahiere(double Minuend, double Subtrahend)
         {
             double Resultat = Minuend - Subtrahend;
+
+            return Resultat;
+        }
+
+        static double Multipliziere(double Multiplikator, double Multiplikand)
+        {
+            double Resultat = Multiplikator * Multiplikand;
+
+            return Resultat;
+        }
+
+        static double Dividiere(double Dividend, double Divisior)
+        {
+            double Resultat = Dividend / Divisior;
 
             return Resultat;
         }

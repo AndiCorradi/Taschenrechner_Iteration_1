@@ -2,7 +2,6 @@ User Stories Taschenrechner
 
 User Story Vorlage: Als <Rolle/Anwendertyp> möchte ich <Ziel/Wunsch/Funktion>, um <Nutzen>
 
-Iteration #1
 
 Titel: Softwarestruktur
 Story: Als Entwickler möchte ich den Quellcode sauber strukturieren, um später einfach weitere Funktionalitäten hinzu fügen zu können.
@@ -25,6 +24,24 @@ Titel: Addieren
 Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
 Akzeptanzkriterien: 
 -	Gleitkommazahlen zwischen -10.0 und 100.0 können addiert werden.
+Status:
+-	Implementiert
+-	getestet
+-	erledigt
+
+Titel: multiplizieren
+Story: Als Benutzer möchte ich zwei Zahlen eingeben, um dessen Produkt berechnen zu lassen.
+Akzeptanzkriterien:
+-	Gleitkommazahlen zwischen -10.0 und 100.0 können multipliziert werden.
+Status:
+-	Implementiert
+-	getestet
+-	erledigt
+
+Titel: dividieren
+Story: Als Benutzer möchte ich zwei Zahlen eingeben, um dessen Quotient berechnen zu lassen.
+Akzeptanzkriterien:
+-	Gleikommazahlen zwischen -10.0 und 100.0 können dividiert werden.
 Status:
 -	Implementiert
 -	getestet
