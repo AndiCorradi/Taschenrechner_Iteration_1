@@ -23,7 +23,7 @@ namespace Taschenrechner
 
         static void Main(string[] args)
         {
-            // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen mit Kommastellen eingeben, um deren Summe berechnen zu lassen.
+            // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen mit Kommastellen eingeben, um deren Summe oder Differenz oder Quotient oder Produkt berechnen zu lassen.
             string Operation = HoleBenutzerEingabe("Bitte gib die gewünschte Operation ein (+ - * /): ");
             string erstersteZahlAlsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
             string zweiteZahlAlsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
@@ -34,36 +34,11 @@ namespace Taschenrechner
             double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
             // Berechnung ausführen
-            double Resultat = 0;
-            switch (Operation)
-            {
-                case "+":
-                Resultat = Addiere(ersteZahl, zweiteZahl);
-                Console.WriteLine("Die Summe ist: {0}", Resultat);
-                   break;
-            
-                case "-":
-                Resultat = Subtrahiere(ersteZahl, zweiteZahl);
-                Console.WriteLine("Die Differenz ist: {0}", Resultat);
-                break;
-
-                case "/":
-                Resultat = Dividiere(ersteZahl, zweiteZahl);
-                    Console.WriteLine("Der Quotient ist: {0}", Resultat);
-                    break;
-
-                case "*":
-                Resultat = Multipliziere(ersteZahl, zweiteZahl);
-                    Console.WriteLine("Das Produkt ist: {0}", Resultat);
-                    break;
-            
-                default:
-                    Console.WriteLine("Du hast eine ungültige Operation eingegeben");
-                    break;
-            }
-            
+            Berechnung(ersteZahl, zweiteZahl, Operation);
 
             // Ausgabe
+            double Resultat = Berechnung(ersteZahl, zweiteZahl, Operation);
+            GibResultatAus(Resultat, Operation); 
             HoleBenutzerEingabe("Zum beenden bitte Return drücken !");
         }
 
@@ -102,5 +77,59 @@ namespace Taschenrechner
 
             return Zahl;
         }
+
+        static double Berechnung(double ersteZahl, double zweiteZahl, string Operation)
+        {
+            double Resultat = 0;
+            switch (Operation)
+            {
+                case "+":
+                    Resultat = Addiere(ersteZahl, zweiteZahl);
+                    break;
+
+                case "-":
+                    Resultat = Subtrahiere(ersteZahl, zweiteZahl);
+                    break;
+
+                case "/":
+                    Resultat = Dividiere(ersteZahl, zweiteZahl);
+                    break;
+
+                case "*":
+                    Resultat = Multipliziere(ersteZahl, zweiteZahl);
+                    break;
+
+                default:
+                    break;
+            }
+            return Resultat;
+        }
+
+        static void GibResultatAus(double Resultat, String Operation)
+        {
+            switch (Operation)
+            {
+                case "+":
+                    Console.WriteLine("Die Summe ist: {0}", Resultat);
+                    break;
+
+                case "-":
+                    Console.WriteLine("Die Differenz ist: {0}", Resultat);
+                    break;
+
+                case "/":
+                    Console.WriteLine("Der Quotione ist: {0}", Resultat);
+                    break;
+
+                case "*":
+                    Console.WriteLine("Das Produkt ist: {0}", Resultat);
+                    break;
+
+                default:
+                    Console.WriteLine("Du hast eine ungültige Operation eingegeben");
+                    break;
+            }
+        }
+     
     }
 }
