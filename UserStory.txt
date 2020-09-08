@@ -2,6 +2,32 @@ User Stories Taschenrechner
 
 User Story Vorlage: Als <Rolle/Anwendertyp> möchte ich <Ziel/Wunsch/Funktion>, um <Nutzen>
 
+TiteL: Beenden
+Story: Als Benutzer möchte ich "Fertig" anstelle einer weiteren Zahl eingeben, um den Taschenrechner zu beenden.
+Akzeptanzkriterien:
+- Taschenrechner wird beendet, sobald "Fertig" i(in dieser Schreibweise) eingegeben wird.
+- Es gibt einen entsprechenden Hinweis, dass der Benutzer weiss mit welchem Kommando er den Taschenrechner beenden kann.
+Status:
+- Offen
+
+Titel: Fortlaufende Berechung
+Story: Als Benutzer möchte ich eine weitere Zahl eingeben, um die vorherige Oparation nochmals auszuführen mit dem vorherigen Resultat.
+Akzeptanzkriterien:
+- Gleitkommazahlen zwischen -10.0 und 100.0 können eingegeben werden
+- Die Operation aus der verherigen Berechung wird nochmals verwendet
+- Das Resultat wird ausgegeben ohne weitere Interaktion mit dem Benutzer
+Status:
+- Offen
+
+Titel: Objektorientierung
+Story: Als Entwickler möchte ich die Anwendung objektorientiert entwickeln, um später einfach weitere Funktionalitäten hinzufügen zu können.
+Akzeptanzkriterien:
+- Die Aufteilung der Funktionalitäten folgt dem Prinzip Separation of Concerns (SoC)
+- Bei der Erstellung der Klassen und Methoden wird das Prinzip Don't Repeat yourself (DRY) eingehalten
+Hinweis:
+- Diese Story ist eine Erweiterung zur Story "Softwarestruktur"
+Status:
+-Offen
 
 Titel: Softwarestruktur
 Story: Als Entwickler möchte ich den Quellcode sauber strukturieren, um später einfach weitere Funktionalitäten hinzu fügen zu können.
