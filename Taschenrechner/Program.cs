@@ -23,13 +23,11 @@ namespace Taschenrechner
 
         static void Main(string[] args)
         {
-            ConsoleView Benutzereingabe = new ConsoleView();
-            ConsoleView ResultatAusgabe = new ConsoleView();
+            ConsoleView view = new ConsoleView();
 
-            // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen mit Kommastellen eingeben, um deren Summe oder Differenz oder Quotient oder Produkt berechnen zu lassen.
-            string Operation = Benutzereingabe.HoleBenutzerEingabe("Bitte gib die gewünschte Operation ein (+ - * /): ");
-            string erstersteZahlAlsString = Benutzereingabe.HoleBenutzerEingabe ("Bitte gib die erste Zahl ein: ");
-            string zweiteZahlAlsString = Benutzereingabe.HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
+            string Operation = view.HoleBenutzerEingabe("Bitte gib die gewünschte Operation ein (+ - * /): ");
+            string erstersteZahlAlsString = view.HoleBenutzerEingabe ("Bitte gib die erste Zahl ein: ");
+            string zweiteZahlAlsString = view.HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
             
             // Wandel Text in Gleitkommazahlen
             // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
@@ -41,8 +39,8 @@ namespace Taschenrechner
             model.Berechne(ersteZahl, zweiteZahl, Operation);
 
             // Ausgabe
-            ResultatAusgabe.GibResultatAus(model.Resultat, Operation);
-            Benutzereingabe.HoleBenutzerEingabe("Zum beenden bitte Return drücken !");
+            view.GibResultatAus(model.Resultat, Operation);
+            view.HoleBenutzerEingabe("Zum beenden bitte Return drücken !");
         }
     }
 }

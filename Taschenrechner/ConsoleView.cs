@@ -16,13 +16,6 @@ namespace Taschenrechner
             return Zahl;
         }
 
-        public double Resultat { get; set; }
-
-        public ConsoleView()
-        {
-            Resultat = 0;
-        }
-
         public void GibResultatAus(double Resultat, String Operation)
         {
             switch (Operation)
