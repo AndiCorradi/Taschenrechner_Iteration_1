@@ -34,12 +34,11 @@ namespace Taschenrechner
             double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
             // Berechnung ausführen
-
-            //Berechnung(ersteZahl, zweiteZahl, Operation);
+            RechnerModel model = new RechnerModel();
+            model.Berechne(ersteZahl, zweiteZahl, Operation);
 
             // Ausgabe
-            double Resultat = Berechnung(ersteZahl, zweiteZahl, Operation);
-            GibResultatAus(Resultat, Operation); 
+            GibResultatAus(model.Resultat, Operation); 
             HoleBenutzerEingabe("Zum beenden bitte Return drücken !");
         }
 
