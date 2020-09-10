@@ -8,32 +8,56 @@ namespace Taschenrechner
 {
     class ConsoleView
     {
-        public string HoleBenutzerEingabe(string ausgabeText)
-        {
-            Console.Write(ausgabeText);
-            string Zahl = Console.ReadLine();
+        private RechnerModel model;
 
-            return Zahl;
+        public ConsoleView(RechnerModel model)
+        {
+            this.model = model;
+        }
+        //public string HoleBenutzerEingabe(string ausgabeText)
+        //{
+        //    Console.Write(ausgabeText);
+        //    string Zahl = Console.ReadLine();
+
+        //    return Zahl;
+        //}
+
+        public string HoleZahlVomBenutzer()
+        {
+            Console.Write("Bitte gib eine Zahl für die Berechnung ein: ");
+            return Console.ReadLine();
         }
 
-        public void GibResultatAus(double Resultat, String Operation)
+        public string HoleOperatorVomBenutzer()
+        {
+            Console.Write("Bitte gib die auszuführende Operation ein (+, -, /, *): ");
+            return Console.ReadLine();
+        }
+
+        public void WarteAufEndeDurchBenutzer()
+        {
+            Console.WriteLine("Zum beenden bitte Return drücken!");
+            Console.ReadLine();
+        }
+
+        public void GibResultatAus(String Operation)
         {
             switch (Operation)
             {
                 case "+":
-                    Console.WriteLine("Die Summe ist: {0}", Resultat);
+                    Console.WriteLine("Die Summe ist: {0}", model.Resultat);
                     break;
 
                 case "-":
-                    Console.WriteLine("Die Differenz ist: {0}", Resultat);
+                    Console.WriteLine("Die Differenz ist: {0}", model.Resultat);
                     break;
 
                 case "/":
-                    Console.WriteLine("Der Quotione ist: {0}", Resultat);
+                    Console.WriteLine("Der Quotione ist: {0}", model.Resultat);
                     break;
 
                 case "*":
-                    Console.WriteLine("Das Produkt ist: {0}", Resultat);
+                    Console.WriteLine("Das Produkt ist: {0}", model.Resultat);
                     break;
 
                 default:
