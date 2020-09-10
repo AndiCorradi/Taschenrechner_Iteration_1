@@ -34,7 +34,8 @@ namespace Taschenrechner
             double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
             // Berechnung ausführen
-            Berechnung(ersteZahl, zweiteZahl, Operation);
+
+            //Berechnung(ersteZahl, zweiteZahl, Operation);
 
             // Ausgabe
             double Resultat = Berechnung(ersteZahl, zweiteZahl, Operation);
@@ -42,33 +43,7 @@ namespace Taschenrechner
             HoleBenutzerEingabe("Zum beenden bitte Return drücken !");
         }
 
-        static double Addiere(double ersterSummand, double zweiterSummand)
-        {
-            double Resultat = ersterSummand + zweiterSummand;
-
-            return Resultat;
-        }
-
-        static double Subtrahiere(double Minuend, double Subtrahend)
-        {
-            double Resultat = Minuend - Subtrahend;
-
-            return Resultat;
-        }
-
-        static double Multipliziere(double Multiplikator, double Multiplikand)
-        {
-            double Resultat = Multiplikator * Multiplikand;
-
-            return Resultat;
-        }
-
-        static double Dividiere(double Dividend, double Divisior)
-        {
-            double Resultat = Dividend / Divisior;
-
-            return Resultat;
-        }
+        
 
         static string HoleBenutzerEingabe(string ausgabeText)
         {
@@ -78,32 +53,7 @@ namespace Taschenrechner
             return Zahl;
         }
 
-        static double Berechnung(double ersteZahl, double zweiteZahl, string Operation)
-        {
-            double Resultat = 0;
-            switch (Operation)
-            {
-                case "+":
-                    Resultat = Addiere(ersteZahl, zweiteZahl);
-                    break;
-
-                case "-":
-                    Resultat = Subtrahiere(ersteZahl, zweiteZahl);
-                    break;
-
-                case "/":
-                    Resultat = Dividiere(ersteZahl, zweiteZahl);
-                    break;
-
-                case "*":
-                    Resultat = Multipliziere(ersteZahl, zweiteZahl);
-                    break;
-
-                default:
-                    break;
-            }
-            return Resultat;
-        }
+        
 
         static void GibResultatAus(double Resultat, String Operation)
         {
