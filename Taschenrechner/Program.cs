@@ -25,23 +25,11 @@ namespace Taschenrechner
         {
             RechnerModel model = new RechnerModel();
             ConsoleView view = new ConsoleView(model);
+            AnwendungsController controller = new AnwendungsController(view, model);
 
-            string erstersteZahlAlsString = view.HoleZahlVomBenutzer();
-            string Operation = view.HoleOperatorVomBenutzer();
-            string zweiteZahlAlsString = view.HoleZahlVomBenutzer();
+            controller.Ausfuehren();
+
             
-            // Wandel Text in Gleitkommazahlen
-            // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
-            double ersteZahl = Convert.ToDouble(erstersteZahlAlsString);
-            double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
-
-            // Berechnung ausführen
-            
-            model.Berechne(ersteZahl, zweiteZahl, Operation);
-
-            // Ausgabe
-            view.GibResultatAus(Operation);
-            view.WarteAufEndeDurchBenutzer();
         }
     }
 }
