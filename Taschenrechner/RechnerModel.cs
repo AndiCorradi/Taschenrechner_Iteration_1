@@ -9,14 +9,18 @@ namespace Taschenrechner
     class RechnerModel
     {
         public double Resultat { get; private set; }
+        public string operation { get; set; }
 
         public RechnerModel()
         {
             Resultat = 0;
+            operation = "unbekannt";
         }
 
         public void Berechne(double ersteZahl, double zweiteZahl, string Operation)
         {
+            this.operation = Operation;
+
             switch (Operation)
             {
                 case "+":
